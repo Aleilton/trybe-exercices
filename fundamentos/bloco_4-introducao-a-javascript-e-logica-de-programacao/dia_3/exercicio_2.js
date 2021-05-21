@@ -6,11 +6,11 @@
 // ****
 // *****
 
-let n = 20;
+let n = 5;
 
 for (let index = 0; index < n; index += 1) {
   let auxiliar = '';
-  for (let indexSec = 0; indexSec < index; indexSec += 1) {
+  for (let indexSec = 0; indexSec <= index; indexSec += 1) {
     auxiliar = auxiliar + '*';
   }
   console.log(auxiliar);
