@@ -63,7 +63,7 @@ let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 
 function verificaMaiorNome (nomesParaComparar) {
   let indiceMaiorNome = 0;
-  for (let index = 0; index <nomesParaComparar.length; index += 1) {
+  for (let index = 0; index < nomesParaComparar.length; index += 1) {
     if (nomesParaComparar[index].length > nomesParaComparar[indiceMaiorNome].length) {
       indiceMaiorNome = index;
     }
@@ -78,7 +78,7 @@ console.log('Maior nome do Array é: ' + nomes[verificaMaiorNome(nomes)]);
 // Array de teste: [2, 3, 2, 5, 8, 2, 3]; .
 // Valor esperado no retorno da função: 2 .
 console.log('\nExercício 5:');
-let numerosExercicio5 = [2, 3, 2, 5, 8, 2, 3];
+let numerosExercicio5 = [2, 3, 2, 5, 5, 5, 5, 8, 2, 3];
 
 function verificaNumeroQueMaisSeRepete (arrayNumeros) {
   let objetoNumeros = {};
@@ -87,10 +87,20 @@ function verificaNumeroQueMaisSeRepete (arrayNumeros) {
     if (objetoNumeros[valorArrayNumero] !== undefined) {
       objetoNumeros[valorArrayNumero] += 1;
     } else {
-      objetoNumeros[valorArrayNumero  ] = 1;
+      objetoNumeros[valorArrayNumero] = 1;
     }
   }
-  console.log(objetoNumeros);
+
+  let numeroRepete;
+  let qtdRepeticoes = 0;
+  for (let valor in objetoNumeros) {
+    if (qtdRepeticoes < objetoNumeros[valor]) {
+      numeroRepete = valor;
+      qtdRepeticoes = objetoNumeros[valor];
+    }
+  }
+
+  console.log(numeroRepete);
 }
 
 verificaNumeroQueMaisSeRepete(numerosExercicio5);
