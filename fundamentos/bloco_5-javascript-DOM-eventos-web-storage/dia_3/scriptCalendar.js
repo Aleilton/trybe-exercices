@@ -209,3 +209,25 @@ function atribuirTaskSelected() {
 }
 
 corTask.addEventListener('click', atribuirTaskSelected);
+
+// Exercício 10:
+// Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+
+// let allDays = document.querySelectorAll('.day');
+
+let divCorSelected = document.querySelector('.task');
+
+function destacarDia(event) {
+  let corAtual = event.target.style.color;
+  let corObjetoOrigem = divCorSelected.style.backgroundColor;
+  if (corAtual == corObjetoOrigem) {
+    event.target.style.color = 'rgb(119,119,119)';
+  } else {
+    event.target.style.color = divCorSelected.style.backgroundColor;
+  }
+}
+
+for (let index = 0; index < allDays.length; index += 1) {
+  allDays[index].addEventListener('click', destacarDia);
+}
