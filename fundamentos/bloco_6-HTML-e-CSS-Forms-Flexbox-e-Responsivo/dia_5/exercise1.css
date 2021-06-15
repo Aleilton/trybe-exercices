@@ -1,11 +1,14 @@
 body {
-
+  font-size: 20px; 
+  padding: 0 20px;
 }
+
 h1 {
-
+  font-size: 30px;
 }
-h2 {
 
+h2 {
+  font-size: 25px;
 }
 
 img {
@@ -13,5 +16,39 @@ img {
 }
 
 figure {
-    margin: 0;
+    margin: 20px 0 ;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-color: antiquewhite;
+    font-size: 16px;
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  h1 , h2 {
+    width: 100%;
+  }
+  
+  figure {
+    flex-basis: 48%;
+  }
+
+  figure img {
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: aquamarine;
+    font-size: 18px;
+    padding: 0 60px;
+    max-width: 1000px;
+  }
+
 }
