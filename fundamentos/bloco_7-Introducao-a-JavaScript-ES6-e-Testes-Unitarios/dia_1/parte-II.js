@@ -8,6 +8,9 @@ const fatorial = number => {
 
 console.log(fatorial(4));
 
+const factorial2 = number => number > 1 ? number * factorial2(number - 1) : 1
+console.log(factorial2(5))
+
 
 const longestWord = frase => {
   let words = frase.split(' ');
