@@ -73,4 +73,12 @@ function authorWith3DotsOnName() {
   return books.find((book) => book.author.name[1] === '.' && book.author.name[4] === '.' && book.author.name[7] === '.').name;
 }
 
+// Solução do gabarito
+
+// function authorWith3DotsOnName() {
+//   return books.find((book) => (
+//     book.author.name.split(' ').filter((word) => word.endsWith('.')).length === 3
+//   )).name;
+// }
+
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
