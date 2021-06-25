@@ -64,4 +64,21 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-//
+// 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+
+const expectedResult = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+function fantasyOrScienceFictionAuthors() {
+  // escreva seu código aqui
+  return books
+  .filter((bookFilter) => bookFilter.genre === 'Fantasia' || bookFilter.genre === 'Ficção Científica')
+  .map((book) => `${book.author.name}`)
+  .sort();
+}
+
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
